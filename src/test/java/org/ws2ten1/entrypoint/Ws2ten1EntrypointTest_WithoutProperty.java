@@ -21,7 +21,6 @@ import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
-import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import org.junit.Test;
@@ -35,8 +34,7 @@ import org.ws2ten1.module3.Module3;
  */
 @SpringBootTest
 @RunWith(SpringRunner.class)
-@TestPropertySource(properties = "ws2ten1.scan-base-packages=org.ws2ten1.module1,org.ws2ten1.module2")
-public class Ws2ten1EntrypointTest {
+public class Ws2ten1EntrypointTest_WithoutProperty {
 	
 	@Autowired
 	ApplicationContext context;
@@ -44,8 +42,10 @@ public class Ws2ten1EntrypointTest {
 	
 	@Test
 	public void testBeanRegistration() {
-		context.getBean(Module1.class);
-		context.getBean(Module2.class);
+		assertThatThrownBy(() -> context.getBean(Module1.class))
+			.isInstanceOfAny(NoSuchBeanDefinitionException.class);
+		assertThatThrownBy(() -> context.getBean(Module2.class))
+			.isInstanceOfAny(NoSuchBeanDefinitionException.class);
 		assertThatThrownBy(() -> context.getBean(Module3.class))
 			.isInstanceOfAny(NoSuchBeanDefinitionException.class);
 	}

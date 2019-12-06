@@ -18,7 +18,7 @@ package org.ws2ten1.module1;
 import org.springframework.stereotype.Component;
 
 /**
- * TODO miyamoto.daisuke.
+ * Component for module1.
  */
 @Component
 public class Module1 {

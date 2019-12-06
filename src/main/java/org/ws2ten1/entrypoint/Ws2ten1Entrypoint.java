@@ -21,7 +21,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * Application common entry point.
  */
-@SpringBootApplication(scanBasePackages = "${ws2ten1.scan-base-packages}")
+@SpringBootApplication(scanBasePackages = "${ws2ten1.scan-base-packages:}")
 public class Ws2ten1Entrypoint {
 	
 	/**
