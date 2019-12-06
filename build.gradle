@@ -5,7 +5,7 @@ buildscript {
 		maven { url 'https://plugins.gradle.org/m2/' }
 	}
 	dependencies {
-		classpath 'com.diffplug.spotless:spotless-plugin-gradle:3.10.0'
+		classpath 'com.diffplug.spotless:spotless-plugin-gradle:3.26.1'
 		classpath 'de.thetaphi:forbiddenapis:2.6'
 		classpath 'de.aaschmid:gradle-cpd-plugin:3.1'
 	}
@@ -48,7 +48,7 @@ apply from: "${rootProject.projectDir}/gradle/bintray.gradle"
 group = 'org.ws2ten1'
 
 // compiler
-sourceCompatibility = '1.8'
+sourceCompatibility = '11'
 
 compileJava {
 	options.compilerArgs << '-Werror'
@@ -62,17 +62,18 @@ repositories {
 }
 
 dependencies {
-	api 'com.fasterxml.jackson.core:jackson-databind'
+	implementation 'org.springframework.boot:spring-boot-autoconfigure'
 
 	// lombok
+	/*
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testCompileOnly 'org.projectlombok:lombok'
 	testAnnotationProcessor 'org.projectlombok:lombok'
+	*/
 
 	// test
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'com.jayway.jsonpath:json-path-assert'
 }
 
 bootJar {
@@ -85,11 +86,7 @@ jar {
 
 tasks.withType(com.github.spotbugs.SpotBugsTask) {
 	reports {
-		html {
-			enabled = true
-		}
-		xml {
-			enabled = false
-		}
+		html.enabled = true
+		xml.enabled = false
 	}
 }
