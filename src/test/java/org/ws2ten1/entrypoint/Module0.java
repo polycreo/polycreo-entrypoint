@@ -15,21 +15,11 @@
  */
 package org.ws2ten1.entrypoint;
 
-import org.springframework.boot.SpringApplication;
+import org.springframework.stereotype.Component;
 
 /**
- * Application common entry point.
+ * Component for module1.
  */
-@Ws2ten1SpringBootApplication
-public class Ws2ten1Entrypoint {
-	
-	/**
-	 * Entry point.
-	 *
-	 * @param args application arguments
-	 */
-	@SuppressWarnings("uncommentedmain")
-	public static void main(String... args) {
-		SpringApplication.run(Ws2ten1Entrypoint.class, args);
-	}
+@Component
+public class Module0 {
 }

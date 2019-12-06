@@ -42,6 +42,7 @@ public class Ws2ten1EntrypointTest_WithoutProperty {
 	
 	@Test
 	public void testBeanRegistration() {
+		context.getBean(Module0.class);
 		assertThatThrownBy(() -> context.getBean(Module1.class))
 			.isInstanceOfAny(NoSuchBeanDefinitionException.class);
 		assertThatThrownBy(() -> context.getBean(Module2.class))

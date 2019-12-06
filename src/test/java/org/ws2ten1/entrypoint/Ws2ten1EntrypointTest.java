@@ -44,6 +44,8 @@ public class Ws2ten1EntrypointTest {
 	
 	@Test
 	public void testBeanRegistration() {
+		assertThatThrownBy(() -> context.getBean(Module0.class))
+			.isInstanceOfAny(NoSuchBeanDefinitionException.class);
 		context.getBean(Module1.class);
 		context.getBean(Module2.class);
 		assertThatThrownBy(() -> context.getBean(Module3.class))
