@@ -31,6 +31,11 @@ import org.springframework.core.annotation.AliasFor;
  * Indicates a {@link Configuration configuration} class that declares one or more
  * {@link Bean @Bean} methods and also triggers {@link SpringBootApplication @SpringBootApplication}.
  *
+ * <p>If the property {@code ws2ten1.scan-base-packages} is not defined, then Spring scans
+ * components based on the class that annotated with this annotation.
+ * If the property {@code ws2ten1.scan-base-packages} is defined, the base packages is configured
+ * (the package of annotated class is not included).</p>
+ *
  * @see SpringBootApplication
  */
 @Target(ElementType.TYPE)
