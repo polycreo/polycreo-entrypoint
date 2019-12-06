@@ -21,6 +21,7 @@ import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import org.junit.Test;
@@ -30,11 +31,12 @@ import org.ws2ten1.module2.Module2;
 import org.ws2ten1.module3.Module3;
 
 /**
- * Test for {@link Ws2ten1Entrypoint}.
+ * Test for {@link TestEntrypoint}.
  */
 @SpringBootTest
 @RunWith(SpringRunner.class)
-public class Ws2ten1EntrypointTest_WithoutProperty {
+@TestPropertySource(properties = "ws2ten1.scan-base-packages=org.ws2ten1.module1,org.ws2ten1.module2")
+public class Ws2ten1SpringBootApplicationTest {
 	
 	@Autowired
 	ApplicationContext context;
@@ -42,11 +44,10 @@ public class Ws2ten1EntrypointTest_WithoutProperty {
 	
 	@Test
 	public void testBeanRegistration() {
-		context.getBean(Module0.class);
-		assertThatThrownBy(() -> context.getBean(Module1.class))
+		assertThatThrownBy(() -> context.getBean(Module0.class))
 			.isInstanceOfAny(NoSuchBeanDefinitionException.class);
-		assertThatThrownBy(() -> context.getBean(Module2.class))
-			.isInstanceOfAny(NoSuchBeanDefinitionException.class);
+		context.getBean(Module1.class);
+		context.getBean(Module2.class);
 		assertThatThrownBy(() -> context.getBean(Module3.class))
 			.isInstanceOfAny(NoSuchBeanDefinitionException.class);
 	}

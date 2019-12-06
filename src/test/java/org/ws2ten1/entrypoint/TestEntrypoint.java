@@ -18,10 +18,10 @@ package org.ws2ten1.entrypoint;
 import org.springframework.boot.SpringApplication;
 
 /**
- * Application common entry point.
+ * Test entry point.
  */
 @Ws2ten1SpringBootApplication
-public class Ws2ten1Entrypoint {
+public class TestEntrypoint {
 	
 	/**
 	 * Entry point.
@@ -30,6 +30,6 @@ public class Ws2ten1Entrypoint {
 	 */
 	@SuppressWarnings("uncommentedmain")
 	public static void main(String... args) {
-		SpringApplication.run(Ws2ten1Entrypoint.class, args);
+		SpringApplication.run(TestEntrypoint.class, args);
 	}
 }
