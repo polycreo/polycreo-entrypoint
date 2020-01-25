@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ws2ten1.module2;
+package org.polycreo.entrypoint;
 
 import org.springframework.stereotype.Component;
 
 /**
- * Component for module2.
+ * Component for module1.
  */
 @Component
-public class Module2 {
+public class Module0 {
 }

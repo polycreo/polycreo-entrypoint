@@ -1,3 +1,3 @@
-# ws2ten1-entrypoint
+# polycreo-entrypoint
 
 Common application entrypoint.

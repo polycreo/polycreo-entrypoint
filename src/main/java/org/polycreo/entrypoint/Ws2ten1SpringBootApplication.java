@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ws2ten1.entrypoint;
+package org.polycreo.entrypoint;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -31,9 +31,9 @@ import org.springframework.core.annotation.AliasFor;
  * Indicates a {@link Configuration configuration} class that declares one or more
  * {@link Bean @Bean} methods and also triggers {@link SpringBootApplication @SpringBootApplication}.
  *
- * <p>If the property {@code ws2ten1.scan-base-packages} is not defined, then Spring scans
+ * <p>If the property {@code polycreo.scan-base-packages} is not defined, then Spring scans
  * components based on the class that annotated with this annotation.
- * If the property {@code ws2ten1.scan-base-packages} is defined, the base packages is configured
+ * If the property {@code polycreo.scan-base-packages} is defined, the base packages is configured
  * (the package of annotated class is not included).</p>
  *
  * @see SpringBootApplication
@@ -43,7 +43,7 @@ import org.springframework.core.annotation.AliasFor;
 @Documented
 @Inherited
 @SpringBootApplication
-public @interface Ws2ten1SpringBootApplication {
+public @interface PolycreoSpringBootApplication {
 	
 	/**
 	 * Exclude specific auto-configuration classes such that they will never be applied.
@@ -69,7 +69,7 @@ public @interface Ws2ten1SpringBootApplication {
 	 */
 	@AliasFor(annotation = SpringBootApplication.class)
 	String[] scanBasePackages() default {
-		"${ws2ten1.scan-base-packages:}"
+		"${polycreo.scan-base-packages:}"
 	};
 	
 	/**

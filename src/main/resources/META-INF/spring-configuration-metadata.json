@@ -1,7 +1,7 @@
 {
   "properties": [
     {
-      "name": "ws2ten1.scan-base-packages",
+      "name": "polycreo.scan-base-packages",
       "type": "java.lang.String",
       "description": "Comma separated java package names to scan Spring components.",
       "defaultValue": ""

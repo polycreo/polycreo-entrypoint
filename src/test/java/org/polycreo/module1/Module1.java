@@ -13,23 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ws2ten1.entrypoint;
+package org.polycreo.module1;
 
-import org.springframework.boot.SpringApplication;
+import org.springframework.stereotype.Component;
 
 /**
- * Test entry point.
+ * Component for module1.
  */
-@Ws2ten1SpringBootApplication
-public class TestEntrypoint {
-	
-	/**
-	 * Entry point.
-	 *
-	 * @param args application arguments
-	 */
-	@SuppressWarnings("uncommentedmain")
-	public static void main(String... args) {
-		SpringApplication.run(TestEntrypoint.class, args);
-	}
+@Component
+public class Module1 {
 }

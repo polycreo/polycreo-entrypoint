@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ws2ten1.entrypoint;
+package org.polycreo.entrypoint;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
@@ -25,16 +25,16 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.ws2ten1.module1.Module1;
-import org.ws2ten1.module2.Module2;
-import org.ws2ten1.module3.Module3;
+import org.polycreo.module1.Module1;
+import org.polycreo.module2.Module2;
+import org.polycreo.module3.Module3;
 
 /**
  * Test for {@link TestEntrypoint}.
  */
 @SpringBootTest
 @RunWith(SpringRunner.class)
-public class Ws2ten1SpringBootApplicationTest_WithoutProperty {
+public class PolycreoSpringBootApplicationTest_WithoutProperty {
 	
 	@Autowired
 	ApplicationContext context;
